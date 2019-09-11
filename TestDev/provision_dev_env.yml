@@ -1,0 +1,110 @@
+---
+# Provision a Test Dev Setup from Snapshot of production
+- name: Provisioning a test environment from source SG for Powermax
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+    - connection.yml
+    - credentials.yml
+    - hosts.yml
+    - powermaxports.yml
+
+  vars:
+    mv_name: Ansible_TEST_MV
+    portgroup_name: "{{ portgroup_name }}"
+    host_name: "{{ host_name }}"
+    src_sg_name: Ansible_FS_APP
+    test_sg_name: Ansible_TEST_SG
+
+    input: &uni_connection_vars
+      serial_no: "{{ serial_no }}"
+      password: "{{ password }}"
+      unispherehost: "{{ unispherehost }}"
+      universion: "{{ universion }}"
+      user: "{{  user  }}"
+      verifycert: "{{ verifycert }}"
+
+  tasks:
+    - name: Create a Snapshot for a Storage Group
+      dellemc_powermax_snapshot:
+        <<: *uni_connection_vars
+        sg_name: "{{ src_sg_name }}"
+        snapshot_name: "ansible_sg_snap"
+        ttl: "1"
+        ttl_unit: "days"
+        state: "present"
+  
+    - name: link  Snapshot to Storage Group
+      dellemc_powermax_snapshot:
+        <<: *uni_connection_vars
+        sg_name: "{{ src_sg_name }}"
+        snapshot_name: "ansible_sg_snap"
+        generation: 0
+        target_sg_name: "{{ test_sg_name }}"
+        link_status: "linked"
+        state: "present"
+
+    - name: Create host "{{ host_name }}"
+      dellemc_powermax_host:
+        <<: *uni_connection_vars
+        host_name: "{{ host_name }}"
+        initiators: "{{ host_initiators }}"
+        state: 'present'
+        initiator_state: 'present-in-host'
+
+    - name: Create port group "{{ portgroup_name }}"
+      dellemc_powermax_portgroup:
+        <<: *uni_connection_vars
+        portgroup_name: "{{ portgroup_name }}"
+        state: "present"
+        ports:  "{{ port_list }}"
+        port_state: 'present-in-group'
+
+    - name: Create MV "{{ mv_name }}" with existing elements
+      dellemc_powermax_maskingview:
+        <<: *uni_connection_vars
+        mv_name: "{{ mv_name }}"
+        portgroup_name: "{{ portgroup_name }}"
+        host_name: "{{ host_name }}"
+        sg_name: "{{ test_sg_name }}"
+        state: 'present'
+
+# Mount Snapshot filesystems
+- name: Provisioning a test environment from source SG for Powermax
+  hosts: mount
+
+  tasks:
+# Rescan storage layer to pull in new devices to host
+# Example here is for emulex hba 
+    - name: Rescan HBA
+      command: /usr/bin/rescan-scsi-bus.sh
+
+    - name: unmount filesystems by label
+      mount:
+        path: "{{ item }}"
+        state: unmounted
+      with_items:
+        - /database
+        - /reports
+        - /logs
+
+    - name: Create Directory
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - /database
+        - /reports
+        - /logs
+      
+    - name: Mount filesystems by label
+      mount:
+        path: "{{ item.mountpoint }}"
+        src: LABEL="{{ item.label }}"
+        fstype: ext4
+        state: mounted
+      with_items:
+        - { label: 'database', mountpoint: '/database'}
+        - { label: 'reports', mountpoint: '/reports'}
+        - { label: 'logs', mountpoint: '/logs'}

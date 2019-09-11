@@ -1,0 +1,19 @@
+- name: Provisioning a test environment from source SG for Powermax
+  hosts: mount
+
+  tasks:
+# Rescan storage layer to pull in new devices to host
+# Example here is for emulex hba
+    - name: Rescan HBA
+      command: /usr/bin/rescan-scsi-bus.sh
+
+    - name: unmount filesystems by label
+      mount:
+        path: "{{ item }}"
+        state: unmounted
+      with_items:
+        - /database
+        - /reports
+        - /logs
+
+

@@ -1,0 +1,21 @@
+# Mount Snapshot filesystems
+- name: Provisioning a test environment from source SG for Powermax
+  hosts: mount
+
+  tasks:
+# Rescan storage layer to pull in new devices to host
+# Example here is for emulex hba
+    - name: Rescan HBA
+      command: /usr/bin/rescan-scsi-bus.sh
+
+    - name: Mount filesystems by label
+      mount:
+        path: "{{ item.mountpoint }}"
+        src: LABEL="{{ item.label }}"
+        fstype: ext4
+        state: mounted
+      with_items:
+        - { label: 'database', mountpoint: '/database'}
+        - { label: 'reports', mountpoint: '/reports'}
+        - { label: 'logs', mountpoint: '/logs'} 
+
