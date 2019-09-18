@@ -1,0 +1,12 @@
+---
+#snow_record variables
+ 
+sn_username: admin
+sn_password: VxRc72yiFJyJ
+sn_instance: dev84117
+
+#data variables
+ 
+sn_severity: 2
+sn_priority: 1
+
