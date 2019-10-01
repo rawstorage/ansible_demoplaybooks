@@ -5,9 +5,7 @@
   vars_files:
     - connection.yml
     - credentials.yml
-    - cluster_storage.yml
-    - clusterhosts.yml
-    - powermaxports.yml
+    - storagedetails.yml
 
   vars:
     mv_name: "{{ mv_name }}"
