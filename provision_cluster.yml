@@ -5,11 +5,9 @@
   vars_files:
     - connection.yml
     - credentials.yml
-    - cluster_storage.yml
-    - clusterhosts.yml
-    - powermaxports.yml
+    - storagedetails.yml
 
-  vars:
+vars:
     mv_name: "{{ mv_name }}"
     portgroup_name: "{{ portgroup_name }}"
     hostgroup_name: "{{ hostgroup_name }}"
