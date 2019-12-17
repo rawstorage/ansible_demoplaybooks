@@ -18,7 +18,7 @@
       verifycert: "{{ verifycert }}"
 
   tasks:
-    - name: Get the detais of rdf group and volumes
+    - name: Get the detais of rdf group 3 volumes
       dellemc_powermax_rdfgroup:
         <<: *uni_connection_vars 
         rdfgroup_number: "3"
