@@ -18,7 +18,7 @@
       verifycert: "{{ verifycert }}"
 
   tasks:
-    - name: Get the detais of storage resource pool
+    - name: Get the capacity detais of Default storage resource pool
       dellemc_powermax_gatherfacts:
         <<: *uni_connection_vars 
         gather_subset:
