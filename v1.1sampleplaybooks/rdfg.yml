@@ -1,0 +1,26 @@
+---
+- name: Provisioning storage for Powermax
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+    - connection.yml
+    - credentials.yml
+
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
+    input: &uni_connection_vars
+      serial_no: "{{ serial_no }}"
+      password: "{{ password }}"
+      unispherehost: "{{ unispherehost }}"
+      universion: "{{ universion }}"
+      user: "{{  user  }}"
+      verifycert: "{{ verifycert }}"
+
+  tasks:
+    - name: Get the detais of rdf group and volumes
+      dellemc_powermax_rdfgroup:
+        <<: *uni_connection_vars 
+        rdfgroup_number: "3"
+      register: "rdfg_result"
+
