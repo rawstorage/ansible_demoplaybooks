@@ -1,0 +1,117 @@
+2020-01-17 06:26:41,199 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:26:41,199 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:26:41,199 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:26:43,993 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:26:43,993 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:26:43,993 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 06:26:43,993 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 06:26:52,630 dellemc_powermax_snapshot.py ERROR : Change SG Ansible_Host_SG Snapshot ansible_sg_snap link status failed with error Bad or unexpected response from the storage volume backend API: Error Modify storagegroup resource. The status code received is 500 and the message is {'message': "A problem occurred modifying the snapshot generation resource: Error in Creating Storage Group ' Ansible_Host_SG_LNKSG': Invalid character(s) in name; use only alphanumerics with embedded dashes or underlines"}. 
+2020-01-17 06:27:45,224 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:27:45,225 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:27:45,225 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:28:24,637 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:28:24,638 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:28:24,638 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:28:27,929 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:28:27,930 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:28:27,930 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 06:28:27,930 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 06:28:29,725 dellemc_powermax_snapshot.py ERROR : Change SG Ansible_Host_SG Snapshot ansible_sg_snap link status failed with error Bad or unexpected response from the storage volume backend API: Error Modify storagegroup resource. The status code received is 500 and the message is {'message': "A problem occurred modifying the snapshot generation resource: Error in Creating Storage Group ' Ansible_Host_SG_LNKSG': Invalid character(s) in name; use only alphanumerics with embedded dashes or underlines"}. 
+2020-01-17 06:33:45,266 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:33:45,266 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:33:45,266 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:36:42,499 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:36:42,499 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:36:42,500 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:36:45,273 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:36:45,273 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:36:45,273 dellemc_powermax_snapshot.py INFO : Change storage group ansible_sg snapshot ansible_sg_snap link status 
+2020-01-17 06:36:45,273 dellemc_powermax_snapshot.py INFO : Getting storage group ansible_sg snapshot ansible_sg_snap details
+2020-01-17 06:36:45,437 dellemc_powermax_snapshot.py ERROR : Got error: The requested resource was not found: Error get storagegroup. The status code received is 404 and the message is {'message': 'The requested snapshot generation resource was not found.'}. while getting details of storage group ansible_sg snapshot ansible_sg_snap
+2020-01-17 06:37:30,218 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:37:30,219 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:37:30,220 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:37:33,037 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:37:33,037 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:37:33,037 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 06:37:33,037 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 06:37:34,930 dellemc_powermax_snapshot.py ERROR : Change SG Ansible_Host_SG Snapshot ansible_sg_snap link status failed with error Bad or unexpected response from the storage volume backend API: Error Modify storagegroup resource. The status code received is 500 and the message is {'message': "A problem occurred modifying the snapshot generation resource: Error in Creating Storage Group ' Ansible_Host_SG_LNKSG': Invalid character(s) in name; use only alphanumerics with embedded dashes or underlines"}. 
+2020-01-17 06:38:26,569 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:38:26,569 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:38:26,569 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:38:30,027 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:38:30,028 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:38:30,028 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 06:38:30,028 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 06:38:31,913 dellemc_powermax_snapshot.py ERROR : Change SG Ansible_Host_SG Snapshot ansible_sg_snap link status failed with error Bad or unexpected response from the storage volume backend API: Error Modify storagegroup resource. The status code received is 500 and the message is {'message': "A problem occurred modifying the snapshot generation resource: Error in Creating Storage Group ' Ansible_Host_SG_LNKSG': Invalid character(s) in name; use only alphanumerics with embedded dashes or underlines"}. 
+2020-01-17 06:40:11,337 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:40:11,337 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:40:11,337 dellemc_powermax_snapshot.py INFO : Creating snapshot ansible_sg_snap for storage group Ansible_Host_SG 
+2020-01-17 06:40:14,185 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 06:40:14,185 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 06:40:14,185 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 06:40:14,186 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:03:00,575 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:03:00,575 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:03:00,575 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:03:00,575 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:13:32,458 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:13:32,458 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:13:32,458 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 0 
+2020-01-17 07:13:33,486 dellemc_powermax_snapshot.py ERROR : Delete SG Ansible_Host_SG Snapshot ansible_sg_snap failed with error Bad or unexpected response from the storage volume backend API: Error Delete storagegroup/Ansible_Host_SG/snapshot/ansible_sg_snap/generation/0 resource. The status code received is 500 and the message is {'message': 'A problem occurred deleting the snapshot generation resources: The action cannot be attempted because the snapshot has a link'}. 
+2020-01-17 07:14:28,153 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:14:28,153 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:14:28,153 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:14:28,153 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:15:15,177 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:15:15,178 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:15:15,178 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:15:15,178 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:16:18,317 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:16:18,317 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:16:18,317 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 07:16:18,317 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:16:21,311 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:16:21,312 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:16:21,312 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:16:21,312 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:16:28,895 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:16:28,895 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:16:28,895 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 07:16:28,895 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:16:29,332 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:16:29,332 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:16:29,333 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:16:29,333 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:24:28,981 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:28,981 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:28,981 dellemc_powermax_snapshot.py INFO : Change storage group Ansible_Host_SG snapshot ansible_sg_snap link status 
+2020-01-17 07:24:28,981 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:24:29,951 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:29,951 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:29,952 dellemc_powermax_snapshot.py INFO : Returning storage group Ansible_Host_SG snapshot ansible_sg_snap details 
+2020-01-17 07:24:29,952 dellemc_powermax_snapshot.py INFO : Getting storage group Ansible_Host_SG snapshot ansible_sg_snap details
+2020-01-17 07:24:30,424 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:30,425 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:30,425 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 7 
+2020-01-17 07:24:33,220 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:33,221 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:33,221 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 6 
+2020-01-17 07:24:35,988 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:35,988 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:35,988 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 5 
+2020-01-17 07:24:38,742 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:38,743 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:38,743 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 4 
+2020-01-17 07:24:41,490 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:41,490 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:41,490 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 3 
+2020-01-17 07:24:44,222 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:44,223 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:44,223 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 2 
+2020-01-17 07:24:46,968 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:46,969 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:46,969 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 1 
+2020-01-17 07:24:49,745 dellemc_powermax_snapshot.py INFO : universion_details: {'is_valid_universion': True, 'user_message': ''}
+2020-01-17 07:24:49,745 dellemc_powermax_snapshot.py INFO : Got PyU4V instance for provisioning on PowerMax 
+2020-01-17 07:24:49,745 dellemc_powermax_snapshot.py INFO : Delete storage group Ansible_Host_SG snapshot ansible_sg_snap generation 0 
