@@ -6,7 +6,6 @@
   vars_files:
     - connection.yml
     - credentials.yml
-    - storagedetails.yml
 
   vars:
     input: &uni_connection_vars
