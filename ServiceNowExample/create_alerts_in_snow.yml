@@ -1,0 +1,78 @@
+---
+- name:  Open Service Now Tickets for New Unacknowledged Alerts on Unisphere
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    #snow_record variables
+    sn_username: admin
+    sn_password: xxxxxxxxx
+    sn_instance: dev51270
+    #data variables
+    sn_severity: 2
+    sn_priority: 1
+    user: smc
+    password: smc
+    serial_no: "000297600448"
+    unispherehost: "unisphere4powermax"
+    universion: "90"
+    verifycert: false
+
+    input: &uni_connection_vars
+      serial_no: "{{ serial_no }}"
+      password: "{{ password }}"
+      unispherehost: "{{ unispherehost }}"
+      universion: "{{ universion }}"
+      user: "{{  user  }}"
+      verifycert: "{{ verifycert }}"
+
+    input: &servicenow_connection
+      username: "{{ sn_username }}"
+      password: "{{ sn_password }}"
+      instance: "{{ sn_instance }}"
+
+  tasks:
+    - name: Get All New Alerts
+      uri:
+        url: "https://{{ unispherehost }}:8443/univmax/restapi/91/system/alert?state=NEW"
+        validate_certs: false
+        user: "{{ user }}"
+        password: "{{ password }}"
+        headers:
+          Content-Type: "application/json"
+        method: GET
+        body_format: json
+        status_code:
+          - 200
+      register: alerts
+
+    - set_fact:
+        new_alert_list: "{{ alerts.json.alertId | list}}"
+
+    - name: Get Alert Details
+      uri:
+        url: "https://{{ unispherehost }}:8443/univmax/restapi/91/system/alert/{{ item }}"
+        validate_certs: false
+        user: "{{ user }}"
+        password: "{{ password }}"
+        headers:
+          Content-Type: "application/json"
+        method: GET
+        body_format: json
+        status_code:
+          - 200
+      register: alert_details_all
+      loop: "{{ new_alert_list }}"
+
+    - name: Create a change request
+      snow_record:
+        <<: *servicenow_connection
+        state: present
+        table: incident
+        data:
+          severity: "{{ sn_severity }}"
+          priority: "{{ sn_priority }}"
+          short_description: Alert from Unisphere Instance  {{ unispherehost }}  {{ item.json.description  }}
+      register: new_incident
+      loop: "{{ alert_details_all.results }}"
+
