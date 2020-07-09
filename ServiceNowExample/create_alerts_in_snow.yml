@@ -16,8 +16,8 @@
     #data variables
     sn_severity: 2
     sn_priority: 1
-    user: smc
-    password: smc
+    user: xxx
+    password: xxx
     serial_no: "000297600448"
     unispherehost: "unisphere4powermax"
     universion: "90"
