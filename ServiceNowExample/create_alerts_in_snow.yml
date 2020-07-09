@@ -1,4 +1,9 @@
 ---
+#Author Paul Martin @rawstorage
+#Disclaimer: Running this playbook will create many alerts in Service Now instance if there are multiple on your system, you may want to adjust your system 
+#or acknowledge/delete Alerts if you have many unacknowledged on your system, or adjust the filters applied to API URL on line 42
+#Playbook is for demonstration use and not intended for production use, before running on your system you should validate.
+
 - name:  Open Service Now Tickets for New Unacknowledged Alerts on Unisphere
   hosts: localhost
   connection: local
@@ -34,7 +39,7 @@
   tasks:
     - name: Get All New Alerts
       uri:
-        url: "https://{{ unispherehost }}:8443/univmax/restapi/91/system/alert?state=NEW"
+        url: "https://{{ unispherehost }}:8443/univmax/restapi/91/system/alert?state=NEW&severity=WARNING&severity=CRITICAL"
         validate_certs: false
         user: "{{ user }}"
         password: "{{ password }}"
