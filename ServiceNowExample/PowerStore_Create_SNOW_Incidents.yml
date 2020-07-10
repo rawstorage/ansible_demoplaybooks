@@ -6,7 +6,7 @@
   vars:
     #snow_record variables
     sn_username: admin
-    sn_password: xxxxxxxxx
+    sn_password: noneofyourbusiness
     sn_instance: dev51270
     #data variables
     sn_severity: 2
