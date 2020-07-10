@@ -1,0 +1,49 @@
+---
+- name:  Open Service Now Tickets for New Unacknowledged Alerts on Unisphere for PowerStore
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    #snow_record variables
+    sn_username: admin
+    sn_password: xxxxxxxxx
+    sn_instance: dev51270
+    #data variables
+    sn_severity: 2
+    sn_priority: 1
+
+    input: &servicenow_connection
+      username: "{{ sn_username }}"
+      password: "{{ sn_password }}"
+      instance: "{{ sn_instance }}"
+
+  tasks:
+    - name: Get All New Alerts
+      uri:
+        url: "https://PowerStore/api/rest/alert?select=id,severity,description_l10n"
+        validate_certs: false
+        headers:
+          Accept: application/json
+          Content-Type: "application/json"
+          Authorization: dXNlcm5hbWU9YWRtaW4sCnBhc3N3b3JkPURvbnRUZWxsYVNvdWw
+        user: admin
+        password: DontTellaSoul
+        method: GET
+        status_code:
+          - 200
+      register: alerts
+
+    - set_fact:
+        new_alert_list: "{{ alerts.json | list}}"
+
+    - name: Create an incident for Alert
+      snow_record:
+        <<: *servicenow_connection
+        state: present
+        table: incident
+        data:
+          severity: "{{ sn_severity }}"
+          priority: "{{ sn_priority }}"
+          short_description: Alert from PowerStore Instance Severity {{ item.severity  }} {{ item.description_l10n  }}
+      register: new_incident
+      loop: "{{ new_alert_list }}"
