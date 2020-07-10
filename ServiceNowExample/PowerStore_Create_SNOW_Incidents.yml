@@ -25,7 +25,6 @@
         headers:
           Accept: application/json
           Content-Type: "application/json"
-          Authorization: dXNlcm5hbWU9YWRtaW4sCnBhc3N3b3JkPURvbnRUZWxsYVNvdWw
         user: admin
         password: DontTellaSoul
         method: GET
