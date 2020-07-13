@@ -81,3 +81,19 @@
       register: new_incident
       loop: "{{ alert_details_all.results }}"
 
+    - name: Acknowlede Alert on Unisphere.
+      uri:
+        url: "https://{{ unispherehost }}:8443/univmax/restapi/91/system/alert/{{ item }}"
+        validate_certs: false
+        user: "{{ user }}"
+        password: "{{ password }}"
+        headers:
+          Content-Type: "application/json"
+        method: PUT
+        body:
+          { "editAlertActionParam": "ACKNOWLEDGE"}
+        body_format: json
+        status_code:
+          - 200
+      register: alert_details_all
+      loop: "{{ new_alert_list }}"
